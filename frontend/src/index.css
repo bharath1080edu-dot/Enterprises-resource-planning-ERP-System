@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply font-sans bg-slate-50 text-navy-800 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-500;
+  }
+}
+
+@layer components {
+
+  /* ── Buttons ─────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-navy-800 text-white rounded-lg font-semibold text-sm hover:bg-navy-700 active:bg-navy-900 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-orange-500 text-white rounded-lg font-semibold text-sm hover:bg-orange-600 active:bg-orange-700 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 border-2 border-navy-800 text-navy-800 rounded-lg font-semibold text-sm hover:bg-navy-50 transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 text-slate-600 rounded-lg text-sm hover:bg-slate-100 hover:text-navy-800 transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-red-500 text-white rounded-lg font-semibold text-sm hover:bg-red-600 transition-all duration-200;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  /* ── Cards ───────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-100 p-6 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  /* ── Form Elements ───────────────────────────────────── */
+  .input {
+    @apply w-full px-3.5 py-2.5 border border-slate-200 rounded-lg text-sm text-navy-800 placeholder-slate-400 bg-white focus:outline-none focus:ring-2 focus:ring-navy-800/20 focus:border-navy-500 transition-colors duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-navy-800 mb-1.5;
+  }
+
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+
+  /* ── Badges ──────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-navy {
+    @apply badge bg-navy-100 text-navy-800;
+  }
+
+  .badge-orange {
+    @apply badge bg-orange-100 text-orange-700;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-gray {
+    @apply badge bg-slate-100 text-slate-600;
+  }
+
+  /* ── Table ───────────────────────────────────────────── */
+  .table-container {
+    @apply overflow-x-auto rounded-xl border border-slate-100 shadow-sm;
+  }
+
+  .table {
+    @apply w-full text-sm;
+  }
+
+  .table thead {
+    @apply bg-navy-800 text-white;
+  }
+
+  .table thead th {
+    @apply px-4 py-3 text-left font-semibold text-xs uppercase tracking-wider;
+  }
+
+  .table tbody tr {
+    @apply border-b border-slate-50 hover:bg-orange-50/40 transition-colors;
+  }
+
+  .table tbody td {
+    @apply px-4 py-3 text-slate-700;
+  }
+
+  .table tbody tr:last-child {
+    @apply border-b-0;
+  }
+
+  /* ── Page Header ─────────────────────────────────────── */
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-navy-800;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-slate-500 mt-0.5;
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────── */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-navy-700/70 transition-all duration-200;
+  }
+
+  .sidebar-link.active {
+    @apply bg-orange-500 text-white shadow-lg shadow-orange-500/25;
+  }
+
+  /* ── Stat Card ───────────────────────────────────────── */
+  .stat-card {
+    @apply card flex items-center gap-4;
+  }
+
+  .stat-icon {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0;
+  }
+
+  /* ── Progress Bar ────────────────────────────────────── */
+  .progress-bar {
+    @apply w-full bg-slate-200 rounded-full h-2;
+  }
+
+  .progress-fill {
+    @apply h-2 rounded-full bg-orange-500 transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy-800 to-navy-600 bg-clip-text text-transparent;
+  }
+
+  .bg-brand-gradient {
+    @apply bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900;
+  }
+}
